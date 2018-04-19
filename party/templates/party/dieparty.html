@@ -1,0 +1,254 @@
+{% extends 'base.html'%}
+
+{% block content %}
+<!doctype html>
+<html lang="en">
+<head>
+  {% load staticfiles %}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="../../../../favicon.ico">
+
+  <title>My Blog</title>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+</head>
+
+<body>
+
+  <header>
+
+    <main role="main">
+
+      <section class="jumbotron text-center">
+        <div class="container">
+          <h1 class="jumbotron-heading">Du hast es geschaft. Hiermit bist du herzlich zu unserem Geburtstag eingeladen!</h1>
+          <p class="lead text-muted">Die Party steigt am 28.04.2018 gegen 19:00 <br/> gleicher Ort wie immer.</p>
+
+          <img src="{%static 'Birdy.jpeg'%}" height=200/>
+        </div>
+      </section>
+
+      <div class="container marketing">
+
+        <!-- Three columns of text below the carousel -->
+        <div class="row">
+          <div class="col-lg-4">
+            <img class="rounded-circle" src="{% static 'pizza-slice.png' %}" alt="Generic placeholder image" width="140" height="140">
+            <h2>Speis</h2>
+            <p>Zum essen gibt es wie jedes Jahr klassisch, Pizza. Ansonsten gibt es natürlich all das, was ihr sonst noch so mitbringt.</p>
+            <p><a class="btn btn-secondary" href="#speisen-jump" role="button">View details &raquo;</a></p>
+          </div><!-- /.col-lg-4 -->
+          <div class="col-lg-4">
+            <img class="rounded-circle" src="{% static 'cocktail.png' %}"  alt="Generic placeholder image" width="140" height="140">
+            <h2>Trank</h2>
+            <p>Getränke mäsig stellen wir Bier, Wein, das Hochprozentige der letzten Jahre, und natürlich auch Leitungswasser Säfte und Co. </p>
+            <p><a class="btn btn-secondary" href="#getraenke-jump" role="button">View details &raquo;</a></p>
+          </div><!-- /.col-lg-4 -->
+          <div class="col-lg-4">
+            <img class="rounded-circle" src="{% static 'interior-design.png' %}" alt="Generic placeholder image" width="140" height="140">
+            <h2>Lagpelan</h2>
+            <p>Hier gehts zum Lageplan und den einzellnen Areas. <br/></p>
+            <p><a class="btn btn-secondary" href="#lageplan-jump" role="button">View details &raquo;</a></p>
+          </div><!-- /.col-lg-4 -->
+        </div><!-- /.row -->
+
+        <!-- START THE FEATURETTES -->
+
+        <hr class="featurette-divider">
+        <div class="container">
+
+          <div class="row featurette">
+            <div class="col-md-7">
+              <a id="speisen-jump">
+              <h1 class="featurette-heading"> Speisen <span class="text-muted"></span></h1> <br/>
+              <a/>
+              <p class="lead">
+                Wie immer backen wir den ganzen Abend fleisig Pizza für euch. Dazu holt euch einfach einen Bestellzettel, auf dem ihr eure gewünschten Zutaten ankreuzt.<br/>  Und ganz wichtig EUREN NAMEN DRAUFSCHREIBT!!.
+                nur damit eure Pizza euch wieder findet... <br/>  Wenn ihr es noch schafft euch zu merken, was ihr auf eurer Pizza haben wolltet, sollte nichts mehr schief gehen ;).
+              </p>
+
+              <br/> <br/>
+              <div class="container">
+                <div class="album py-5 bg-light">
+                  <div class="container">
+
+                    <h2>Neben Tomaten und Käse gibt es solange der Vorrat reicht. </h2>
+                    <div class="container">
+                      <h3>
+                        <br/> - Pilze
+                        <br/> - extra Tomaten
+                        <br/> - Paprika
+                        <br/> - Gorgonzola
+                        <br/> - Oliven
+                        <br/> - Mais
+                        <br/> - Schinken
+                        <br/> - Salami
+                      </h3>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-5">
+              <img class="rounded-circle" src="{% static 'pizza-slice.png' %}" width="300" height="300">
+            </div>
+          </div>
+        </div>
+
+        <hr class="featurette-divider">
+        <div class="row featurette">
+          <div class="col-md-7 order-md-2">
+            <a id="getraenke-jump">
+            <h2 class="featurette-heading"> Getränke <span class="text-muted"></span></h2>
+            <p class="lead">
+            </a>
+              Wer viel isst muss auch viel trinken. Damit ihr uns nicht verdurstet haben wir natürlich für ausreichend zu Trinken gesorgt.
+              <br/>
+              Wie jedes Jahr gibt es deshalb eine erlesene Auswahl an Getränken der örtlichen Brauerein und Supermärkte.
+            </p>
+
+            <br/> <br/>
+            <div class="container">
+              <div class="album py-5 bg-light">
+                <div class="container">
+                  <div class="container">
+
+                    <h2> Helles: </h3>
+                    <div class="container">
+                      <h4> Augustiner, Tegernseeer, Mühlfeldbräu, Flötzinger, Gösser </h4>  <p>Nur für euch die größte Auswahl an natürlichem Hopfenblütentee </p> <br/>
+                    </div>
+
+                    <h3> Weißbier: </h3>
+                    <div class="container">
+                      <h4> Weiß, Leicht, Alkoholfrei oder Dunkel, pur mit Limmo oder Cola ganz nach deinem geschmak</h4> <p> All das gibts bei uns nur von der besten Miesbacherbrauerei Hopf!</p>  <br/>
+                    </div>
+
+                    <h3> Longdrinks </h3>
+                    <div class="container">
+                      <h4> Wodka, Rum, Gin und was ihr sonst noch so findet. </h4> <p> Mischt euch einfach was ihr wollt oben im 2. Stock an der Bar gleich links vom Treppenaufgang  </p><br/>
+                    </div>
+
+                    <h3> Weine: </h3>
+                    <div class="container">
+                      <h4> Prosecco, Sekt, Weißwein, Rotwein, Spritz  </h4><p>Das beste aus der Frucht der Traube, mit spriz und ohne</p><br/>
+                    </div>
+
+                    <h3> Alkoholfreies: </h3>
+                    <div class="container">
+                      <h4> Leitungswasser, Spezi, Limmo, Cola und Säfte  </h4><p> Mischt euch einfach euren Drink ganz nach Gusto</p><br/>
+                    </div>
+
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-5 order-md-1">
+            <img class="rounded-circle" src="{% static 'cocktail.png' %}"  alt="Generic placeholder image" width="300" height="300">
+          </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+          <div class="col-md-7">
+            <a id="lageplan-jump">
+            <h2 class="featurette-heading"> Lageplan. <span class="text-muted"></span></h2>
+          </a>
+            <p class="lead">
+              Damit ihr euch nicht verlauft oder die besten Areas auf der Party verspasst hier ein kurzer Überblick übder die Lage
+            </p>
+
+            <br/> <br/>
+            <div class="container">
+              <div class="album py-5 bg-light">
+                <div class="container">
+                  <div class="container">
+
+                    <h3> Keller: </h3>
+                    <div class="container">
+                      <h4> Wer sich auskennt darf hier Getränke nachschub holen </h4>  <p>Aber seit gewarnt, das Chaos ist überall</p> <br/>
+                    </div>
+                    <br/>
+                    <h3> Erdgeschoss: </h3>
+                    <div class="container">
+                      <h4> Hier bitte die Schuhe ausziehen</h4> <p> Vorsicht vor dem Schuhsalatmonster</p>  <br/>
+                    </div>
+                    <br/>
+
+                    <h3> 1. Stock </h3>
+                    <div class="container">
+                      <h4> Pizzabackstube. </h4> <p> Hier könnt ihr eure Bestellung abgeben. Dazu bitte die ausliegenden Bestellungs-Zettel ausfüllen</p><br/>
+                    </div>
+                    <div class="container">
+                      <h4> Esszimmer </h4> <p> Hier kannst du dir was zu Trinken holen, deine Pizza essen und zu guter Musik ausgezeichnete Gespräche führen </p><br/>
+                    </div>
+                    <div class="container">
+                      <h4> Blaue Grotte </h4> <p> Hier kannst du ein bischen abchillen und eine Runde Singstar oder Wehrwolf spielen </p><br/>
+                    </div>
+                    <div class="container">
+                      <h4> Raucherbalkon </h4> <p>Für Kultanhänger, die abundzu ihren Göttern ein paar Brandopfer bringen müssen</p><br/>
+                    </div>
+                    <div class="container">
+                      <h4> Klo Nr. 1 </h4> <p>Für das kleine oder große Geschäft...beim letzten bitte das Fenster bedienen </p><br/>
+                    </div>
+                    <br/>
+
+                    <h3> 2. Stock: </h3>
+                    <div class="container">
+                      <h4> Jojos Area </h4><p>Gemütliche Couchrunde, gleich neben der Bar mit gelegentlichem absintlichen Kandlelightdinner</p><br/>
+                    </div>
+                    <div class="container">
+                      <h4> Tobis Area  </h4><p> Chillin, Darten, Karten und Dancefloor zugleich</p><br/>
+                    </div>
+                    <div class="container">
+                      <h4> Gästequatier </h4><p> Party zu lange? kein Bock mehr? oder einfach nur viel zu Blau? dann ist hier genau der Richtige platz, such dir ein Bett und machs dir gemütlich</p><br/>
+                    </div>
+                    <div class="container">
+                      <h4> Klo Nr. 2  </h4><p> Für die stillen und sinnlichen Momente </p><br/>
+                    </div>
+                    <div class="container">
+                      <h4> Bar  </h4><p> Nach der Treppe gleich links findet ihr eine Bar mit Kühlschrank nehmt und mischt euch, wie es euch beliebt</p><br/>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <div class="col-md-5">
+            <img class="rounded-circle" src="{% static 'interior-design.png' %}" alt="Generic placeholder image" width="300" height="300">
+          </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <!-- /END THE FEATURETTES -->
+
+      </div><!-- /.container -->
+
+      <!-- /END THE FEATURETTES -->
+
+
+    </main>
+
+    <footer class="text-muted">
+
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+  </body>
+  </html>
+
+  {% endblock %}
