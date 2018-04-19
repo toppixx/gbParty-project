@@ -13,11 +13,14 @@
 
 <form method="POST" action="{% url 'create'%}" enctype="multipart/form-data">
   {% csrf_token %}
+  Ersteller: <br/>
+  <input type="text" name="creator"/>
+  <br/>
   Title : <br/>
   <input type="text" name="title"/>
   <br/>
   Beschreibung: <br/>
-  <input type="textbox" name="body"/>
+  <input class="col-12 "type="textbox" name="body"/>
   <br/>
   Bild: <br/>
   <input type="file" name="image"/>

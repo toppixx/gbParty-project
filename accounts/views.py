@@ -1,8 +1,9 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
+from django.contrib.auth.decorators import login_required
 from django.contrib import auth
 
-
+@login_required(login_url="/error404")
 def signup(request):
     if request.method == 'POST':
         #user wants to sign up

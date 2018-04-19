@@ -56,29 +56,35 @@
         </div>
 
         {% for product in products.all %}
-        <div class="card mb-4 box-shadow">
-
-        <div class="row pt">
-                <div class="col-2" onclick="window.location='{% url 'detail' product.id %}';" style="cursor: pointer;">
-                  <img src="{{ product.image.url }}" class="img-fluid"/>
+        <div class = "row pt-2">
+          <div class ="col-4">
+            <img src="{{ product.image.url }}" class="img-fluid"/>
+          </div>
+          <div class ="col-4">
+            <a href="{% url 'detail' product.id %}" > <h1> {{product.title}} </h1></a>
+            <p> {{ product.body }}</p>
+          </div>
+            <div class ="">
+                <div onclick="window.location='{% url 'detail' product.id %}';" style="cursor: pointer;">
+                  <br/>
+                  <a href="javascript:{document.getElementById('support {{ product.id }}').submit()}"> <button class="btn btn-primary btn-large btn-block "> Beteiligen</button></a>
                 </div>
-                <div class="col-8"onclick="window.location='{% url 'detail' product.id %}';" style="cursor: pointer;">
-                  <h1>{{product.title}} </h1>
-                  <p> {{product.summary}} </p>
-                </div>
-                <div class="col-2"onclick="window.location='{% url 'detail' product.id %}';" style="cursor: pointer;">
-                  <a href="javascript:{document.getElementById('upvote{{ product.id }}').submit()}"> <button class="btn btn-primary btn-large btn-block">  <span class="oi oi-chevron-top"></span>  Upvote {{product.votes_total}} </button></a>
-                </div>
-
-
-
-
-          <form id="upvote{{ product.id }}" method="POST" action="{% url 'upvote' product.id %}">
-            {% csrf_token %}
-            <input type='hidden'>
-          </form>
+                <form id="support{{ product.id }}" method="POST" action="{% url 'support' product.id  %}">
+                  {% csrf_token %}
+                  Dein Name: <br/>
+                  <input type="text" name="suporter"/>
+                </form>
+              </div>
         </div>
-      </div>
+
+        <div class = "row">
+
+        </div>
+        <div class = "row">
+          <div class ="col-8">
+            <p> Unterstützer: {{ product.supporter }}</p>
+          </div>
+        </div>
 
         {% endfor %}
       </div>

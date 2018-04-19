@@ -7,7 +7,10 @@ class Product(models.Model):
     votes_total = models.IntegerField(default = 1)
     image = models.ImageField(upload_to ='images/')
     body = models.TextField()
-    hunter = models.ForeignKey(User, on_delete = models.CASCADE)
+    supporter = models.TextField()
+    numbersupp = models.IntegerField()
+    hunter = models.TextField()
+
 
     def __str__(self):
         return self.title

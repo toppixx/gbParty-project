@@ -1,0 +1,49 @@
+
+<div class="album py-5 bg-light">
+
+<div class="row bt">
+  <div class="col-12" onclick="window.location='{% url 'create' %}';" style="cursor: pointer;">
+    <div class="card mb-4 box-shadow">
+      <div class="card-body">
+        <h3><span class="oi oi-plus"></span>   Du hast eine Idee für ein Geschenk, Nachspeise, Vorspeise oder Sonstiges? <br/> Teile deine Idee und finde Freunde, die dich unterstüzten. </h3>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+{% for product in products.all %}
+<div class="card mb-4 box-shadow">
+
+<div class="row pt">
+        <div class="col-2" onclick="window.location='{% url 'detail' product.id %}';" style="cursor: pointer;">
+          <img src="{{ product.image.url }}" class="img-fluid"/>
+        </div>
+        <div class="col-8"onclick="window.location='{% url 'detail' product.id %}';" style="cursor: pointer;">
+          <h1>{{product.title}} </h1>
+          <p> {{product.summary}} </p>
+        </div>
+        <div class="col-2"onclick="window.location='{% url 'detail' product.id %}';" style="cursor: pointer;">
+          <a href="javascript:{document.getElementById('upvote{{ product.id }}').submit()}"> <button class="btn btn-primary btn-large btn-block">  <span class="oi oi-chevron-top"></span>  Upvote {{product.votes_total}} </button></a>
+        </div>
+
+
+
+
+  <form id="upvote{{ product.id }}" method="POST" action="{% url 'upvote' product.id %}">
+    {% csrf_token %}
+    <input type='hidden'>
+  </form>
+</div>
+</div>
+
+
+  <div class = 'container'>
+    {% block vote %}
+    <br />
+    {% endblock %}
+
+  </div>
+
+{% endfor %}
+</div>
