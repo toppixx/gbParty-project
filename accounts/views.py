@@ -38,6 +38,6 @@ def login(request):
 def logout(request):
     if request.method == 'POST':
         auth.logout(request)
-        return redirect('home')
+        return redirect('login')
     else:
-        return redirect ('home')
+        return redirect ('login')

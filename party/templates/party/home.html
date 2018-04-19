@@ -21,44 +21,70 @@
 
   <header>
 
-  <main role="main">
+    <main role="main">
 
-    <section class="jumbotron text-center">
-      <div class="container">
-        <h1 class="jumbotron-heading">Du hast es geschaft. Hiermit bist du herzlich zu unserem Geburtstag eingeladen!</h1>
-        <p class="lead text-muted">Die Party steigt am 28.04.2018 gegen 19:00 <br/> gleicher Ort wie immer.</p>
+      <section class="jumbotron text-center">
+        <div class="container">
+          <h1 class="jumbotron-heading">Du hast es geschaft. Hiermit bist du herzlich zu unserem Geburtstag eingeladen!</h1>
+          <p class="lead text-muted">Die Party steigt am 28.04.2018 gegen 19:00 <br/> gleicher Ort wie immer.</p>
 
-        <img src="{%static 'Birdy.jpeg'%}" height=200/>
-      </div>
-    </section>
+          <img src="{%static 'Birdy.jpeg'%}" height=200/>
+        </div>
+      </section>
 
-    <div class="album py-5 bg-light">
-      <div class="container">
-
+        <div class="card mb-4 box-shadow">
         <div class="row">
-          {% for job in jobs.all %}
-          <div class="col-md-4">
-            <div class="card mb-4 box-shadow">
-              <img class="card-img-top" src="{{job.image.url}}" />
-              <div class="card-body">
-                <p class="card-text">{{job.summary}}</p>
+          <div class="col-12">
+            <div class="container">
+
+                <h2> Du bist noch auf der suche nach einem Geschenk, Vor-/Nachspeise oder ähnlichem? <br/> dann schau dich doch hier einmal durch, vielleicht findest du ja etwas an dem du dich beteiligen kannst oder hast sogar selber eine Idee. </h2>
               </div>
             </div>
+
+              </div>
+        </div>
+        <div class="album py-5 bg-light">
+
+        <div class="row bt">
+          <div class="col-12" onclick="window.location='{% url 'create' %}';" style="cursor: pointer;">
+            <div class="card mb-4 box-shadow">
+              <div class="card-body">
+                <h3><span class="oi oi-plus"></span>   Du hast eine Idee für ein Geschenk, Nachspeise, Vorspeise oder Sonstiges? <br/> Teile deine Idee und finde Freunde, die dich unterstüzten. </h3>
+              </div>
+            </div>
+
           </div>
-          {% endfor %}
+        </div>
+
+        {% for product in products.all %}
+        <div class="card mb-4 box-shadow">
+
+        <div class="row pt">
+                <div class="col-2" onclick="window.location='{% url 'detail' product.id %}';" style="cursor: pointer;">
+                  <img src="{{ product.image.url }}" class="img-fluid"/>
+                </div>
+                <div class="col-8"onclick="window.location='{% url 'detail' product.id %}';" style="cursor: pointer;">
+                  <h1>{{product.title}} </h1>
+                  <p> {{product.summary}} </p>
+                </div>
+                <div class="col-2"onclick="window.location='{% url 'detail' product.id %}';" style="cursor: pointer;">
+                  <a href="javascript:{document.getElementById('upvote{{ product.id }}').submit()}"> <button class="btn btn-primary btn-large btn-block">  <span class="oi oi-chevron-top"></span>  Upvote {{product.votes_total}} </button></a>
+                </div>
+
+
+
+
+          <form id="upvote{{ product.id }}" method="POST" action="{% url 'upvote' product.id %}">
+            {% csrf_token %}
+            <input type='hidden'>
+          </form>
         </div>
       </div>
-    </div>
 
-    <div class="row pt-3">
-      <div class="col-2">
-        <span class="iconic" data-glyph="lightbulb-alt-on" title="lightbulb alt on" aria-hidden="true"></span>
+        {% endfor %}
       </div>
-      <div class="col-8" onclick="window.location='{% url 'mitbring' %}';" style="cursor: pointer;">
-        <h1>Du hast eine Idee </h1>
-      </div>
-    </div>
-  </main>
+
+    </main>
 
   <footer class="text-muted">
   </footer>

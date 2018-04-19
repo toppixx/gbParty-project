@@ -33,7 +33,6 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'products.apps.ProductsConfig',
     'party.apps.PartyConfig',
-    'mitbring.apps.MitbringConfig',
     'accounts.apps.AccountsConfig',
     'django.contrib.admin',
     'django.contrib.auth',

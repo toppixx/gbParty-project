@@ -13,22 +13,13 @@
 
 <form method="POST" action="{% url 'create'%}" enctype="multipart/form-data">
   {% csrf_token %}
-  Title: <br/>
+  Title : <br/>
   <input type="text" name="title"/>
   <br/>
-  Body: <br/>
+  Beschreibung: <br/>
   <input type="textbox" name="body"/>
   <br/>
-  <br/>
-  URL: <br/>
-  <input type="text" name="url"/>
-  <br/>
-  <br/>
-  Icon: <br/>
-  <input type="file" name="icon"/>
-  <br/>
-  <br/>
-  Image: <br/>
+  Bild: <br/>
   <input type="file" name="image"/>
   <br/>
   <br/>
