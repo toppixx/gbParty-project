@@ -43,10 +43,10 @@ def detail(request, product_id):
             product.supporter += ', ' + request.POST['supporter']
             product.numbersupp += 1
             product.save()
-            return  redirect('/products/' + str(product.id),{'error' : 'This shouldnet happen0'})
+            return  redirect( '/products/' + str(product.id),{'product': product, 'error' : 'Danke für deine Hilfe'+product.supporter})
         else:
-            return render(request, 'products/detail.html', {'error' : 'This shouldnet happen1'})
-    return render(request, 'products/detail.html',   {'product': product, 'error' : 'This shouldnet happen2'} )
+            return render(request, 'products/detail.html', {'error' : 'bitte fülle alle Felder aus'})
+    return render(request, 'products/detail.html', {'product': product, 'error' : 'Debug well'} )
 
 
 """@login_required(login_url="/login")

@@ -30,19 +30,19 @@
 
           <img src="{%static 'Birdy.jpeg'%}" height=200/>
 
-            <div class="row">
-              <div class="col-12">
-                <div class="container">
-                  <br/><br/>
-                  <h3> Du bist noch auf der suche nach einem Geschenk, Vor-/Nachspeise oder ähnlichem? <br/> dann schau dich doch hier einmal durch, vielleicht findest du ja etwas an dem du dich beteiligen kannst oder hast sogar selber eine Idee. </h3>
-                </div>
+          <div class="row">
+            <div class="col-12">
+              <div class="container">
+                <br/><br/>
+                <h3> Du bist noch auf der suche nach einem Geschenk, Vor-/Nachspeise oder ähnlichem? <br/> dann schau dich doch hier einmal durch, vielleicht findest du ja etwas an dem du dich beteiligen kannst oder hast sogar selber eine Idee. </h3>
               </div>
             </div>
+          </div>
         </div>
       </section>
 
 
-        <div class="album py-5 bg-light">
+      <div class="album py-5 bg-light">
 
         <div class="row bt">
           <div class="col-12" onclick="window.location='{% url 'create' %}';" style="cursor: pointer;">
@@ -51,38 +51,50 @@
                 <h3><span class="oi oi-plus"></span>   Du hast eine Idee für ein Geschenk, Nachspeise, Vorspeise oder Sonstiges? <br/> Teile deine Idee und finde Freunde, die dich unterstüzten. </h3>
               </div>
             </div>
-
           </div>
         </div>
 
         {% for product in products.all %}
         <div class = "row pt-2">
-          <div class ="col-4">
-            <img src="{{ product.image.url }}" class="img-fluid"/>
+          <div class ="col-3">
+            <img  onclick="window.location='{% url 'detail' product.id %}';" style="cursor: pointer;" src="{{ product.image.url }}" class="img-fluid"/>
           </div>
-          <div class ="col-4">
-            <a href="{% url 'detail' product.id %}" > <h1> {{product.title}} </h1></a>
+          <div class ="col-5">
             <p> {{ product.body }}</p>
           </div>
-            <div class ="">
-                <div onclick="window.location='{% url 'detail' product.id %}';" style="cursor: pointer;">
-                  <br/>
-                  <a href="javascript:{document.getElementById('support {{ product.id }}').submit()}"> <button class="btn btn-primary btn-large btn-block "> Beteiligen</button></a>
-                </div>
-                <form id="support{{ product.id }}" method="POST" action="{% url 'support' product.id  %}">
-                  {% csrf_token %}
-                  Dein Name: <br/>
-                  <input type="text" name="suporter"/>
-                </form>
+
+          <div class ="col-3">
+            <div class="row pt-1">
+              <div class ="col-12">
+              <a href="javascript:{document.getElementById('upvote').submit()}"> <button class=" col-12 btn btn-primary btn-large "> Beteiligen </button></a>
+            </div>
+          </div>
+
+            <form id="upvote" method="POST" action="{% url 'support' product.id %}">
+              {% csrf_token %}
+              <div class="row pt-1">
+                <div class ="col-12">
+
+                Dein Name: <br/>
               </div>
+            </div>
+
+              <div class="row pt-1">
+                <div class ="col-12">
+
+                <input class="col-12"type="text" name="supporter"/>
+              </div>
+            </div>
+
+            </form>
+          </div>
+
+
         </div>
 
-        <div class = "row">
-
-        </div>
-        <div class = "row">
-          <div class ="col-8">
-            <p> Unterstützer: {{ product.supporter }}</p>
+        <div class = "row pt-2">
+          <div class ="col-12">
+            <h2> Unterstützer: {{ product.supporter }}</h2>
           </div>
         </div>
 
@@ -91,16 +103,16 @@
 
     </main>
 
-  <footer class="text-muted">
-  </footer>
+    <footer class="text-muted">
+    </footer>
 
-  <!-- Bootstrap core JavaScript
-  ================================================== -->
-  <!-- Placed at the end of the document so the pages load faster -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
-</body>
-</html>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+  </body>
+  </html>
 
-{% endblock %}
+  {% endblock %}
