@@ -3,7 +3,7 @@ from django.contrib.auth.decorators import login_required
 
 from products.models import Product
 
-@login_required(login_url="/login")
+@login_required(login_url="/acounts/login")
 def dieparty(request):
     products = Product.objects
     return render(request, 'party/dieparty.html')
