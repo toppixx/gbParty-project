@@ -27,92 +27,155 @@
         <div class="container">
           <h1 class="jumbotron-heading">Du hast es geschaft. Hiermit bist du herzlich zu unserem Geburtstag eingeladen!</h1>
           <p class="lead text-muted">Die Party steigt am 28.04.2018 gegen 19:00 <br/> gleicher Ort wie immer.</p>
+          <a href="{% static 'print@home.pdf'%}">
+          <img src="{%static 'FrontCover_2018.jpeg'%}" height=200/> </a>
+          <img src="{%static 'BackCover.jpeg'%}" height=200/> </a>
 
-          <img src="{%static 'Birdy.jpeg'%}" height=200/>
-
-          <div class="row">
-            <div class="col-12">
-              <div class="container">
-                <br/><br/>
-                <h3> Du bist noch auf der suche nach einem Geschenk, Vor-/Nachspeise oder ähnlichem? <br/> dann schau dich doch hier einmal durch, vielleicht findest du ja etwas an dem du dich beteiligen kannst oder hast sogar selber eine Idee. </h3>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
 
-
       <div class="album py-5 bg-light">
+        <div class="row bt-1">
+          <div class="col-12 bt-1">
+            <div class="container">
 
-        <div class="row bt">
-          <div class="col-12" onclick="window.location='{% url 'create' %}';" style="cursor: pointer;">
-            <div class="card mb-4 box-shadow">
-              <div class="card-body">
-                <h3><span class="oi oi-plus"></span>   Du hast eine Idee für ein Geschenk, Nachspeise, Vorspeise oder Sonstiges? <br/> Teile deine Idee und finde Freunde, die dich unterstüzten. </h3>
-              </div>
-            </div>
+            <h1> Die zwei Zuckerpuppen werden das erste Mal 50 </h1> <br/>
+
+            <p>Sehr geehrte Liebhaberin von kleinen Sünden zwischendurch,<br/>
+            am 28.04.2018 um 19:00 ist es wieder so weit, die größte Orgie des Jahres steigt im zuckersüßen Bad Tölz. Am 29.04.2018 folgt, für alle die über Nacht bleiben und noch Bock haben, die Afterparty an der Isar.<br/>
+          </p>
+            <br/> <h3>Der Abend</h3>
+
+            <p>
+              Rezept für eine himmlische Geburtstagsparty:<br/>
+
+              1. Packen sie eine beliebige Anzahl von Sahneschnittchen XX und XY in ein einen kubischen Körper mit einem süßen Raumvolumen Z.<br/>
+
+              2. Teilen sie anschließend die Größen XX und XY in Gruppen gleicher Süßegrade auf.<br/>
+
+              3. Geben sie nach einer gewissen Ruhezeit süße Verführungen und Getränke hinzu.<br/>
+
+              4. Schmecken sie das ganze je nach Belieben zusätzlich mit akustischer Klängen ab.<br/>
+
+              5. Zum Abschluss verzieren sie die Umgebung mit Persönlichkeits-Identifizierenden-Präsenten.<br/>
+
+
+              PS: genatzt es gibt mal wieder bloß Pizza und Bier;D<br/>
+
+              PSPS: ja wir finden‘s auch schlimm zu lesen.<br/>
+            </p>
+
+            <br/><h3>Verbotene Süßigkeiten<br/></h3>
+
+            <p>
+              Schlechte Laune, dagegen gibt’s Schokolade.<br/>
+
+              Unnötige Geschenke die keiner will (Soll heißen du sollst keinen scheiß mitnehmen, nur das du was mitgenommen hast!! Wenn du nichts findest frag einfach mal rum)<br/>
+
+              Wasser – ist zum Waschen da.<br/>
+
+              Salate mit Gurken (auch keine verdammten Essiggurken)!!!! (Nussknacker alias Jorieiah)<br/>
+
+              <br/><h3> Erlaubte Zuckerle<br/> </h3>
+              <p>
+                Verdammte SCHEISS BESTE STIMMUNG!<br/>
+
+                Back/Teigwaren aller Art<br/>
+
+                Irgendwelches Grünzeug…wenn’s denn sein muss ;P<br/>
+
+                Prä- oder Post-Hauptspeisige Verzerrbarkeiten.<br/>
+
+                Geschenke (wer Planlos oder Unkreativ ist soll halt seine eigenen Lieblingsgifte mitbringen)<br/>
+
+                Biere, Spirituosen, vergorene Säfte, unvergorene Säfte<br/>
+              </p>
+
+              <br/><h3>Knigge: </h3>
+
+              <p>KEIN VERDAMMTES AUF DEM HANDY RUMGESCHUBSE!!! Such dir lieber wen zum rumschmusen.<br/></p>
           </div>
         </div>
-
-        {% for product in products.all %}
-        <div class = "row pt-2">
-          <div class ="col-3">
-            <img  onclick="window.location='{% url 'detail' product.id %}';" style="cursor: pointer;" src="{{ product.image.url }}" class="img-fluid"/>
-          </div>
-          <div class ="col-5">
-            <p> {{ product.body }}</p>
-          </div>
-
-          <div class ="col-3">
-            <div class="row pt-1">
-              <div class ="col-12">
-              <a href="javascript:{document.getElementById('upvote').submit()}"> <button class=" col-12 btn btn-primary btn-large "> Beteiligen </button></a>
-            </div>
-          </div>
-
-            <form id="upvote" method="POST" action="{% url 'support' product.id %}">
-              {% csrf_token %}
-              <div class="row pt-1">
-                <div class ="col-12">
-
-                Dein Name: <br/>
-              </div>
-            </div>
-
-              <div class="row pt-1">
-                <div class ="col-12">
-
-                <input class="col-12"type="text" name="supporter"/>
-              </div>
-            </div>
-
-            </form>
-          </div>
-
-
-        </div>
-
-        <div class = "row pt-2">
-          <div class ="col-12">
-            <h2> Unterstützer: {{ product.supporter }}</h2>
-          </div>
-        </div>
-
-        {% endfor %}
       </div>
+<br/><br/>
+                <div class="row">
+                  <div class="col-12">
+                    <div class="container">
+                      <br/><br/>
+                      <h3> Du bist noch auf der suche nach einem Geschenk, Vor-/Nachspeise oder ähnlichem? <br/> dann schau dich doch hier einmal durch, vielleicht findest du ja etwas an dem du dich beteiligen kannst oder hast sogar selber eine Idee. </h3>
+                    </div>
+                  </div>
+                </div>
+          </div>
+          <div class="row bt-2">
+            <div class="col-12" onclick="window.location='{% url 'create' %}';" style="cursor: pointer;">
+              <div class="card mb-4 box-shadow">
+                <div class="card-body">
+                  <h3><span class="oi oi-plus"></span>   Du hast eine Idee für ein Geschenk, Nachspeise, Vorspeise oder Sonstiges? <br/> Teile deine Idee und finde Freunde, die dich unterstüzten. </h3>
+                </div>
+              </div>
+            </div>
+          </div>
 
-    </main>
+          {% for product in products.all %}
+          <div class = "row pt-2">
+            <div class ="col-3">
+              <img  onclick="window.location='{% url 'detail' product.id %}';" style="cursor: pointer;" src="{{ product.image.url }}" class="img-fluid"/>
+            </div>
+            <div class ="col-5">
+              <p> {{ product.body }}</p>
+            </div>
 
-    <footer class="text-muted">
-    </footer>
+            <div class ="col-3">
+              <div class="row pt-1">
+                <div class ="col-12">
+                  <a href="javascript:{document.getElementById('upvote').submit()}"> <button class=" col-12 btn btn-primary btn-large "> Beteiligen </button></a>
+                </div>
+              </div>
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
-  </body>
-  </html>
+              <form id="upvote" method="POST" action="{% url 'support' product.id %}">
+                {% csrf_token %}
+                <div class="row pt-1">
+                  <div class ="col-12">
 
-  {% endblock %}
+                    Dein Name: <br/>
+                  </div>
+                </div>
+
+                <div class="row pt-1">
+                  <div class ="col-12">
+
+                    <input class="col-12"type="text" name="supporter"/>
+                  </div>
+                </div>
+
+              </form>
+            </div>
+
+
+          </div>
+
+          <div class = "row pt-2">
+            <div class ="col-12">
+              <h2> Unterstützer: {{ product.supporter }}</h2>
+            </div>
+          </div>
+
+          {% endfor %}
+        </div>
+
+      </main>
+
+      <footer class="text-muted">
+      </footer>
+
+      <!-- Bootstrap core JavaScript
+      ================================================== -->
+      <!-- Placed at the end of the document so the pages load faster -->
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    </body>
+    </html>
+
+    {% endblock %}
