@@ -51,30 +51,25 @@
           {% for product in products.all %}
           <div class="card mb-4 box-shadow">
             <div class="row pt-1">
+
               <div class="col-4" onclick="window.location='{% url 'detail' product.id %}';" style="cursor: pointer;">
                 <img src="{{ product.image.url }}" class="img-fluid"/>
               </div>
               <div class="col-8"onclick="window.location='{% url 'detail' product.id %}';" style="cursor: pointer;">
+                <div class ="row pt-1">
+                  <h4>Wir sind schon Dabei: {{product.supporter}}</h4>
+                </div>
                 <h3>{{product.title}} </h3>
                 <p> {{product.summary}} </p>
               </div>
             </div>
             <div class="container">
             <div class = "row pt-1">
-              <a href="javascript:{document.getElementById('upvote').submit()}"> <button class="btn btn-primary btn-large btn-block"> Beteiligen </button></a>
+              <a href="{% url 'detail' product.id %}"> <button class="btn btn-primary btn-large btn-block "> Beteiligen </button></a>
             </div>
 
-            <div class = "row pt-1">
-              <form id="upvote" method="POST" action="{% url 'support' product.id %}">
-                {% csrf_token %}
-                Dein Name: <br/>
-                  <input class=""type="text" name="supporter"/>
-              </form>
-            </div>
 
-            <div class ="row pt-1">
-              <h2>Wir sind schon Dabei: {{product.supporter}}</h2>
-            </div>
+
           </div>
 
           </div>

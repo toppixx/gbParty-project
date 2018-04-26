@@ -46,7 +46,7 @@ def detail(request, product_id):
             return  redirect( '/products/' + str(product.id),{'product': product, 'error' : 'Danke für deine Hilfe'+product.supporter})
         else:
             return render(request, 'products/detail.html', {'error' : 'bitte fülle alle Felder aus'})
-    return render(request, 'products/detail.html', {'product': product, 'error' : 'Debug well'} )
+    return render(request, 'products/detail.html', {'product': product, 'error' : ''} )
 
 
 """@login_required(login_url="/login")
