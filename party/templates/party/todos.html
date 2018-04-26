@@ -57,7 +57,7 @@
               </div>
               <div class="col-8"onclick="window.location='{% url 'detail' product.id %}';" style="cursor: pointer;">
                 <div class ="row pt-1">
-                  <h4>Wir sind schon Dabei: {{product.supporter}}</h4>
+                <br/>  <h4> <br/> Wir sind schon Dabei: {{product.supporter}}</h4>
                 </div>
                 <h3>{{product.title}} </h3>
                 <p> {{product.summary}} </p>
@@ -76,7 +76,6 @@
 
         {% endfor %}
       </div>
-      <!--> Hier endets mit den mitbring Feldern</!-->
 
     </main>
 
